@@ -1,0 +1,14 @@
+--silicon_version=28 
+-g 
+--diag_warning=225 
+--large_memory_model 
+--float_support=fpu32 
+-z 
+-m"Image_Flash.pjt.map" 
+--stack_size=0x7B0 
+--heap_size=0x400 
+--warn_sections 
+-i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c2000/lib" -i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/c2000/include" -i"C:/tidcs/c28/Flash28_API/Flash28335_API_V210/lib/Flash28335_API_V210.lib" 
+--reread_libs 
+--rom_model 
+"./Image_main.obj" "./Image_Processing_Functions.obj" "./Image_FLASH_API.obj" "./DSP2833x_usDelay.obj" "./DSP2833x_SysCtrl.obj" "./DSP2833x_PieVect.obj" "./DSP2833x_PieCtrl.obj" "./DSP2833x_GlobalVariableDefs.obj" "./DSP2833x_DefaultIsr.obj" "./DSP2833x_CpuTimers.obj" "./DSP2833x_CodeStartBranch.obj" "./DSP2833x_Adc.obj" "./DSP2833x_ADC_cal.obj" "./ADC.obj" -l"libc.a" -l"C:\tidcs\c28\Flash28_API\Flash28335_API_V210\lib\Flash28335_API_V210.lib" "../DSP2833x_Headers_nonBIOS.cmd" "../F28335.cmd" "../Flash28335_API_V210.lib" 

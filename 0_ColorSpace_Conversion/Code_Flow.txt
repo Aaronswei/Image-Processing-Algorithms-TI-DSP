@@ -1,0 +1,56 @@
+			CODE FLOW EXPLANATION
+__________________________________________________________________
+On DSP Side:
+0) START
+1) DSP Program starts and initializes, and waits for 
+   command 'S' from PC(Python side).
+
+2) After it gets 'S' it:
+	(i)   Sends 'S' as response
+	(ii)  resets the camera
+	(iii) gets the Camera version 
+	(iv)  sends command to take photo  
+	(v)   sends command to getbuffer length
+	(vi)  reads the buffer(image) in chunks
+
+3) Sends image name "Original Image"
+4) Sends image length to PC(Python Side)
+5) Sends Image
+6) waits for command 'S' from PC(Python side).
+7) Sends 'S' as response
+8) DSP receives image block by block and saves each block into flash
+
+//DSP has the Entire Image Stored in Flash
+
+9) DSP Sends the 'no. of processed images it will send=n'
+10) Sends 'n' processed image
+    (i) sends name of image and type of image
+    (ii) DSP reads image(block by block) from flash 
+	-> Performs Image Processing
+	-> Sends Image to Python (block by block) (x 12 blocks)
+
+    (iii) step i,ii->repeats 'n' times
+11) STOP
+__________________________________________________________________
+
+
+__________________________________________________________________
+On Python Side:
+0) START
+1) Sends 'S', Receives 'S' as response and waits for image name
+2) Gets image name, waits for image length
+3) Gets image length, waits for image
+4) Receives image (compressed)
+5) Saves Image with name "Original Image"
+6) Reads the saved image (decompressed)
+7) Sends command 'S', Receives 'S' as response
+8) Python sends image block by block (12 blocks)
+
+9) Python waits for 'no. of processed images to be received=n'
+10) Python receives 'n' images
+	(i) receives name of image and type of image
+	(ii) receives each image block by block (x 12 blocks)
+	(iii) saves image after complete image is received
+	(iv) step i,ii,iii->repeats 'n' times
+11) STOP
+__________________________________________________________________

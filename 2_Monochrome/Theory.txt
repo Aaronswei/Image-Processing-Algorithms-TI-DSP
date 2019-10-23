@@ -1,0 +1,26 @@
+			MONOCHROME IMAGE
+_________________________________________________________________
+A monochrome image is an image consisting of a single color against a neutral background.
+
+Color images are displayed as Red, Green, and Blue.  Each of these 3 color components is a monochromatic image.  You can certainly display each one as a grayscale image,  or alternatively, as a color image with only one color component active (say, keep R but set  G, and B to zero).
+
+Color Image
+R=R_comp
+G=G_comp
+B=B_comp
+
+Red Monochrome
+R=R_comp
+G=0
+B=0
+
+Green Monochrome
+R=0
+G=G_Comp
+B=0
+
+Blue Monochrome
+R=0
+G=0
+B=B_comp
+_________________________________________________________________

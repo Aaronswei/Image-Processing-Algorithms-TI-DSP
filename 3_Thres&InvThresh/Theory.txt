@@ -1,0 +1,25 @@
+	`	THRESHOLD & INVERSE THRESHOLD
+_________________________________________________________________
+Thresholding is extreme contrast stretching.
+
+Programming Steps:
+1) Read Image
+2) Identify a Threshold Value
+3) For all pixel values below Threshold set pixel value 0
+4) For all pixel values equal and above threshold set pixel value 255 (For 8 bit grayscale input)
+5) Thresholded O/P Image (O/P image has 2 levels 0 & 255)
+_________________________________________________________________
+_________________________________________________________________
+Inverse-Thresholding is Inverting the Threshold image.
+Inv_Thresh=255-Thresh
+
+Programming Steps:
+1) Read Image
+2) Identify a Threshold Value
+3) For all pixel values below Threshold set pixel value 255
+4) For all pixel values equal and above threshold set pixel value 0 (For 8 bit grayscale input)
+5) Thresholded O/P Image(O/P image has 2 levels 0 & 255)
+_________________________________________________________________
+
+Page 5: Theory.pdf (Thresholding)
+Page 3: Theory.pdf (Negation=Inverse)

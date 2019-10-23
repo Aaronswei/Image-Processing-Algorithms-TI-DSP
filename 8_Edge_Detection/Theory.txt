@@ -1,0 +1,13 @@
+			EDGE DETECTION
+_________________________________________________________________
+Edges are high frequency components
+For detection of edges a High Pass Filter is applied as a 3x3 mask to th entire image.
+
+Sum of all elements of a HPF is zero.
+
+The process of multiplication of mask with image is same as explained in 4_Filters Folder. (Refer Theory_Filters.txt)
+
+The only difference is the value of the mask array.
+For different Masks(Ordinary, Robert, Prewitt, Sobel), the mask array changes.
+(values of mask array given in code)
+_________________________________________________________________

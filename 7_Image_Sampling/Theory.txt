@@ -1,0 +1,25 @@
+			IMAGE SAMPLING
+_________________________________________________________________
+THEORY
+Sampling is related to x-axis of an image
+x-axis=> sampling => spatial resolution
+
+As we increase sampling rate, area represented by a sample point reduces and vice-versa
+
+Increasing No. of samples => Increasing sampling rate => More Samples=>Increased Size of Image and vice-versa
+
+Increase in spatial resolution increases  minute details
+Decrease in spatial resolution gives Checker Board  (i.e. Blocking) effect. 
+_________________________________________________________________
+PROGRAMMING
+0) START
+1) Initialize Sampling Factor n (assume 4)
+//More the Sampling Factor=> More is the Area Represented by a sample point=> More Checker Board effect
+2) Send Same pixel value data[i][j] for (n=4) times
+3) Send the next pixel (next=> 4th succesive pixel, not the immediate neighbor)
+4) Repeat Steps2 & 3 for complete image
+5) STOP
+_________________________________________________________________ 
+Refer Output Images
+Refer Theory_Sampling.pdf Page 7-16
+_________________________________________________________________

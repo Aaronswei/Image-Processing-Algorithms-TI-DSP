@@ -1,0 +1,21 @@
+			BIT-PLANE SLICING
+_________________________________________________________________
+A typical grayscale Image is a 8bit/pixel image.
+Each bit of a pixel from MSB to LSB is extracted and plotted as a binary image in Bit_Plane Slicing.
+
+MSB=> Maximum information
+LSB=> Minimum information
+
+In our case,
+0) START
+1) Read 8 bit gray scale image pixel wise
+
+2) Convert the pixel value(decimal=base10) to (binary=base2) and store in array a[10]
+3) According to the Bit_Plane required return the value of that bit = a[Bit_Plane]
+
+4) if(a[Bit_Plane]==1) send 255
+5) if(a[Bit_Plane]==0) send 0
+6) STOP
+_________________________________________________________________
+For Understanding of Bit_Plane Slicing check numerical on Page-7 Theory.pdf
+_________________________________________________________________

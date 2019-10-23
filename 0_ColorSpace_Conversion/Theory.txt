@@ -1,0 +1,80 @@
+
+			COLOR MODELS
+_________________________________________________________________
+RGB to YCbCr
+
+YCbCr, Y'CbCr, or Y Pb/Cb Pr/Cr, also written as YCBCR or Y'CBCR, is a family of color spaces used as a part of the color image pipeline in video and digital photography systems. Y' is the luma component and CB and CR are the blue-difference and red-difference chroma components. Y' (with prime) is distinguished from Y, which is luminance, meaning that light intensity is nonlinearly encoded based on gamma corrected RGB primaries.
+
+JFIF usage of JPEG supports Y'CbCr where Y', CB and CR have the full 8-bit range of [0...255].
+
+Note that for the following formulae, the range of each input (R,G,B) is also the full 8-bit range of [0...255].
+Y  =  0.0  + 0.299*R     + 0.587*G     + 0.114*B;
+Cb = 128.0 - 0.1638736*R - 0.331264*G  + 0.5*B;
+Cr = 128.0 + 0.5*R       - 0.418688*G  - 0.081312*B;
+
+For more info:(extra)
+https://en.wikipedia.org/wiki/YCbCr
+_________________________________________________________________
+
+_________________________________________________________________
+RGB to YIQ
+
+YIQ is the color space used by the NTSC color TV system, employed mainly in North and Central America, and Japan. 
+
+The Y component represents the luma information, and is the only component used by black-and-white television receivers. I and Q represent the chrominance information.
+
+Note that for the following formulae, the range of each input (R,G,B) is in range of [0,1].
+
+Y=0.299*R + 0.587*G + 0.114*B;
+I=0.596*R - 0.274*G - 0.322*B;
+Q=0.211*R - 0.523*G + 0.312*B;
+
+Thus,						
+Range of Y is [0,1]
+Range of I is [-0.5957, 0.5957]  
+Range of Q is [-0.5226, 0.5226]  
+So,
+Convert Y,I,Q to [0,255]
+
+For more info:(extra)
+https://en.wikipedia.org/wiki/YIQ
+_________________________________________________________________
+
+_________________________________________________________________
+RGB to HSV
+
+HSV (Hue, Saturation, Value)  representation of the RGB color model, designed in the 1970s by computer graphics researchers to more closely align with the way human vision perceives color-making attributes. In this model, colors of each hue are arranged in a radial slice, around a central axis of neutral colors which ranges from black at the bottom to white at the top. 
+
+
+Note that for the following formulae, the range of each input (R,G,B) is in range of [0,1].
+
+H=(180.0/pi)*(acos((0.5*(R-G)+(R-B))/((R-B)^2+(R-B)*(G-B))^0.5)
+H=360-H 	(if(B>G))
+
+C=max(R,G,B) - min(R,G,B)   (chroma comp)
+V=max(R,G,B)		    (value comp)
+S= 0 (if V=0)
+S= C/V  (else)
+						
+
+Thus,						
+Range of H is [0,360]
+Range of S is [0, 1]  
+Range of V is [0, 1]  
+So,
+Convert H,S,V to [0,255]
+_________________________________________________________________
+_________________________________________________________________
+RGB to CMY
+
+This stands for cyan-magenta-yellow and is used for hardcopy devices. In contrast to color on the monitor, the color in printing acts subtractive and not additive. A printed color that looks red absorbs the other two components  G and  B and reflects R. Thus its (internal) color is
+G+B=CYAN
+R+B=MAGENTA
+R+G=YELLOW. 
+Thus the C-M-Y coordinates are just the complements of the R-G-B coordinates: 
+
+Note that for the following formulae, the range of each input (R,G,B) is also the full 8-bit range of [0...255]
+C=255-R
+M=255-G
+Y=255-B
+_________________________________________________________________

@@ -1,0 +1,27 @@
+		      GRAY & INVERSE-GRAYSCALING
+_________________________________________________________________
+GRAYSCALING
+A grayscale or greyscale image is one in which the value of each pixel is a single sample representing only an amount of light, that is, it carries only intensity information. Often, the grayscale intensity is stored as an 8-bit integer giving 256 possible different shades of gray from black to white.
+
+Grayscale is a range of monochromatic shades from black to white. Therefore, a grayscale image contains only shades of gray and no color.
+Seven Grayscale Conversion Algorithms: (RGB to Gray)
+
+Gray = 0.3R + 0.59G + 0.11B		(Weighted Average)
+Gray = (Red + Green + Blue) / 3 	(Averaging)
+Gray = max(R,G,B)			(Max Method)
+Gray = min(R,G,B) 			(Min Method)
+Gray=R 					(Component Method)
+Gray=G					(Component Method)
+Gray=B					(Component Method)
+
+
+http://www.tannerhelland.com/3643/grayscale-image-algorithm-vb6/
+_________________________________________________________________
+_________________________________________________________________
+INVERSE GRAYSCALING
+Inverse Gray-Scaling is to invert all the pixel values/brightness values in the gray layer, as if the image were converted into a negative. Dark areas become bright and bright areas become dark.
+
+InvGray=255-Gray (For a 8 bit/pixel Gray Scale Image) 
+
+Refer Page-2 of Theory.pdf
+_________________________________________________________________

@@ -1,0 +1,14 @@
+		     CONTRAST STRETCHING
+_________________________________________________________________
+For theory refer Theory.pdf Page3 - Page5
+_________________________________________________________________
+PROGRAMMING:
+0) START
+1) Read Image from Flash
+2) Check pixel belongs to which range 
+3) Apply equation of line accordingly and calculate pixel value of corresponding O/P image.
+4) Send Pixel Value
+5) Goto next pixel, 
+6) Repeat step 2-5 for entire image 
+7) STOP
+_________________________________________________________________

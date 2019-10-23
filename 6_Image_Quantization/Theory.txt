@@ -1,0 +1,50 @@
+			IMAGE QUANTIZATION
+_________________________________________________________________
+THEORY
+Quantization is related to y-axis of an image
+y-axis=> gray levels (for a gray image)
+
+As we increase No.of bits/pixel, no. of gray levels increase
+As we decrease No.of bits/pixel, no. of gray levels decrease
+
+No. of bits per pixel=n
+No. of gray levels=2^n
+
+eg: For n=2
+Gray Levels = {00, 01, 10, 11}=4
+
+
+Thus for a 8bit/pixel gray image,
+No. of gray levels=2^8=256
+
+Therefore,
+Increasing No. of gray levels => Increasing No. of bits/pixel 
+=>Increasing Size of Image
+and vice-versa
+_________________________________________________________________
+PROGRAMMING
+To reduce the no. of gray levels of a gray image(8bit/pixel) 
+We do the following steps:
+
+Let us assume No. of bits/pixel required for o/p image = 4
+STEPS:
+0) START
+1) Read image from Flash
+2) For each pixel in image , a= data[i][j] (assume, a=11110111 = 247) do STEP 3-5
+3) a=a>>(8- No. of bits.pixel)
+Thus, a=00001111 (as per assumed value)
+4) a=a<<(8- No. of bits.pixel)
+Thus, a=11110000 (as per assumed value)    (a=11110000=240)
+//All values in the range 11110000 to 11111111 get to a single gray level of 11110000
+//Reduction in Gray Levels
+5) Send 'a' via UART to PC
+6) STOP
+_________________________________________________________________
+For Visual Understanding of Steps go through Output Images
+_________________________________________________________________
+For more theoretical knowledge refer Page 7-16 of Theory_Quantization.pdf
+_________________________________________________________________
+
+
+
+

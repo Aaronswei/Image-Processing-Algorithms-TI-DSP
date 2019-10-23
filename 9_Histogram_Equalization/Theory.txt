@@ -1,0 +1,17 @@
+Page 41: Theory.pdf
+Page 1-5: Histogram_Equalization.pdf
+_________________________________________________________________
+Histogram Equalization has a few basic steps:
+
+0) Read Image
+1) Calculating No. of pixels having a given gray value for all gray values. (Calculate nk)
+
+2) Total No. of Pixels(n)=img_width*img_height=Sum of all n
+3) Calculate pk=nk/n for all gray values (PDF)
+4) Calculate CDF sk=Sum of all pk
+5) Calculate (L-1)*sk
+6) Rounding off
+7) Allocation of new values to pixels
+8) Equalized Image O/P
+_________________________________________________________________
+Check the numerical solved in Histogram_Equalization.pdf from Page-3 to Page-5 for better understanding of the above steps.

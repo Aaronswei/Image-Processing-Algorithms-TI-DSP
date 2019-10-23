@@ -1,0 +1,35 @@
+			   FILTERS
+________________________________________________________________
+Filter Types:
+1) LPF(Low Pass Filter)
+	(i) Averaging 		(All mask elements 1)
+	(ii) Order Statistic	(Blank Mask)
+2) HPF(High Pass Filter)    (Sum of mask elements zero)
+3) HBF (High Boost Filter) = Original_Image + HPF
+________________________________________________________________
+All filters from programming point of view are 3x3 masks.
+If we can multiply a 3x3 Mask matrix(Mask[3][3]) with image matrix(data[i][j]) the output obtained is the filter value for the pixel at the centre of Mask.
+
+Such masking is to be done for each pixel of image
+
+STEPS:
+0) START
+1) Initialize mask matrix according to filter
+2) Read the Image
+3) For the entire image do STEP 4-7
+ 4) Place mask matrix centre at pixel(0,0), Multiply     corresponding elements take summation and then average.
+    (NOTE: Zero Padding is necessary before multiplication)
+ 5) Output Value is the filteropvalue(0,0)
+ 6) Do same for (0,1),(0,2)....(0,img_width).....(1,0)....
+ 7) Store values in  filteropvalue(i,j) or send directly to PC
+8) STOP
+_________________________________________________________________
+Filters.pdf (FOR VISUALIZATION OF ABOVE STEPS)
+Page 1-4: Low Pass Filters (Visualization of moving mask on image)
+Page 5-7: Averaging Filter (Taking middle value of mask)
+
+Page 8-10: High Pass Filter (Only Mask Values are changed)
+Page 11-12: High Boost Filter (Only Mask Values are Changed)
+_________________________________________________________________
+For more info refer Ch-2 Image Enhancement.pdf from Page 64-87
+_________________________________________________________________
